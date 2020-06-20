@@ -1,5 +1,7 @@
-# Innovation IT python unicode
-Innovation IT NVMe firmware has issue with python unicode interpreter
+# Innovation IT python unicode decode
+Innovation IT NVMe firmware has an issue in combination with python unicode decode.
+
+<img src="nvme.jpeg" alt="Ubuntu 20.04 Installer" width="800" height="396"/>
 
 # NVMe-cli
 ```bash
@@ -8,7 +10,7 @@ Node             SN                   Model                                    N
 ---------------- -------------------- ---------------------------------------- --------- -------------------------- ---------------- --------
 /dev/nvme0n1     AA000000000000000131 INNOVATION��IT                           1         512,11  GB / 512,11  GB    512   B +  0 B   S0614B0G
 ```
-As you can see, there are two signs or multibyte char with defect unicode output.
+As you can see, there are two signs of multibyte char with defect unicode output.
 
 # fdisk
 ```bash
@@ -35,7 +37,7 @@ INNOVATION��IT
 # Example
 
 ## Run python example
-This is the minimum example for the overall exception. Please edit the device, to correct position if needed.
+This is a minimum example for the overall exception. Please edit your device, if needed.
 ```bash
 python3 read_model.py
 Traceback (most recent call last):
@@ -47,14 +49,18 @@ UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa1 in position 10: invalid
 ```
 
 ## Fixed python example for this special case
+This minimum example is based on above example and ignores decoding errors.
 ```bash
 python3 read_model_quick_code_fix.py
 INNOVATIONIT
 ```
 
 # Result
-- Linux systems like Ubuntu or RHEL, use a graphical installer and except because of this unicode signs.
-- You are not able to install a system, only without installer of Ubuntu. I was not able to install RHEL in any case.
+- Linux systems like Ubuntu or RHEL, use a graphical installer and except because of this unicode sign.
+- You are not able to install a system, only without installer for Ubuntu. I was not able to install RHEL in any case.
 - The company behind Innovation IT products needs to update thier firmware and remove these unicode signs from model to work probably and even more correct.
 - If you plan to buy a system with these NVMe, only do it if you not want to use linux as the host system.
 
+# Installer Exceptions
+
+<img src="ubuntu.jpeg" alt="Ubuntu 20.04 Installer" width="400" height="533"/><img src="rhel8.jpeg" alt="Red Hat Enterprise 8 Installer" width="400" height="533"/>
