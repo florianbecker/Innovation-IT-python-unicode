@@ -21,7 +21,8 @@ As you can see, there are two signs or multibyte char with defect unicode output
 ```
 
 # Result
-- Linux systems like Ubuntu or RHEL, use a graphical installer and exept because of this unicode signs.
-- You are not able to install a system, only without installer of Ubunutu. I was not able to install RHEL in any case.
+- Linux systems like Ubuntu or RHEL, use a graphical installer and except because of this unicode signs.
+- You are not able to install a system, only without installer of Ubuntu. I was not able to install RHEL in any case.
 - The company behind Innovation IT products needs to update thier firmware and remove these unicode signs from model to work probably and even more correct.
+- If you plan to buy a system with these NVMe, only do it if you not want to tun linux as the host system.
 
