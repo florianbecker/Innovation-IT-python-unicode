@@ -64,3 +64,8 @@ INNOVATIONIT
 # Installer Exceptions
 
 <img src="ubuntu.jpeg" alt="Ubuntu 20.04 Installer" width="400" height="533"/><img src="rhel8.jpeg" alt="Red Hat Enterprise 8 Installer" width="400" height="533"/>
+
+# Reported bugs
+
+https://bugzilla.redhat.com/show_bug.cgi?id=1849326
+
