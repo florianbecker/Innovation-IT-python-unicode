@@ -58,8 +58,8 @@ INNOVATIONIT
 # Result
 - Linux systems like Ubuntu or RHEL, use a graphical installer and except because of this unicode sign.
 - You are not able to install a system, only without installer for Ubuntu. I was not able to install RHEL in any case.
-- The company behind Innovation IT products needs to update thier firmware and remove these unicode signs from model to work probably and even more correct.
-- If you plan to buy a system with these NVMe, only do it if you not want to use linux as the host system.
+- The company behind Innovation IT products needs to update thier firmware and remove these unicode sign from model to work probably and even more correct.
+- If you plan to buy a system with these NVMe, only do so if you not want to use linux as the host system.
 
 # Installer Exceptions
 
