@@ -69,3 +69,47 @@ INNOVATIONIT
 
 https://bugzilla.redhat.com/show_bug.cgi?id=1849326
 
+# Mitigation
+
+Fortunately, for some unknown reason, one is able to find the manufacturer tool for the SSD's controller `SM2263XT`
+on the internet. That means that we can simply change the name to something less broken ourselves.
+
+**Warning** Reflashing the firmware parameters of the SSD **will erase all data** on it as well as may cause long-term data loss, a bricked SSD etc.
+There is however a `FORCE-ROM mode` accessible via the one jumper on the board, which enables recovery after a bad flash.
+In any case keep in mind, that you're doing this on your own risk.
+
+To rename your drive, you're looking for a File named `SM2263XT_MP_S0620A_B16_B17_FW_S0614B0_RDT_S0617A.rar`. Keep in mind that using that
+means running untrusted code with root privileges on your machine.
+It is therefore strongly recommended to use a clean Windows 10 install for this and detach all other storage devices
+as well as the network connection when running the tool.
+
+Furthermore, you will also need to replace the default windows NVME driver with the one of the manufacturer,
+since only that enables the access needed to reflash the SSD. For this reason alone, it makes sense to use a clean and seperate
+Windows installation. The Driver is digitally signed though so that's something.
+It can be found in an archive named `SM2263XT_MP_R0320A_B16_FW_R0222B0_RDT_R0320A.rar`.
+
+After you've downloaded and extracted the archive, you will need to open the Windows Device Manager to replace the NVME-Driver
+with the one found in the `Nvme` folder of said archive. 
+
+With the driver installed and the system rebooted, you'll then need to launch the `SM2263XT_MPTool_R0320A.exe` and hopefully
+see your broken Innovation IT SSD there.
+
+![Manufacturer tool main](./tool_main.png)
+
+Switch to the `Parameter` Tab and click on `Edit Config`. The Passwort is two spaces `  `.
+
+If everything is working, clicking the `Auto` button for `Flash Select` should leave you with a few options to choose from.
+
+The following screenshot shows the settings, which have been proven working by the author:
+
+![Manufacturer tool parameters](./tool_parameters.png)
+
+Simply replicate those and you _should_ be fine. You _may_ want to uncheck `Modify CID`. That wasn't tested though.
+
+Don't forget to click `Save` after changing the parameters!
+
+To flash these new parameters, switch back to the `Main` Tab and click `Start`.
+
+![Crystal Disk Info Screenshot](./crystaldiskinfo_screenshot_after_flash.png)
+
+Congratulations! You're now the owner of a slightly less broken cheap SSD.
